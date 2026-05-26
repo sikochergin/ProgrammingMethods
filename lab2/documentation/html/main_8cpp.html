@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторная работа 2. Алгоритмы поиска: Файл main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Лабораторная работа 2. Алгоритмы поиска
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &quot;../lab1/data.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_search_algorithms_8h_source.html">SearchAlgorithms.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_hash_table_8h_source.html">HashTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a>&quot;</code><br />
+</div>
+<p><a href="main_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:afd0b4d2b309956e9e41f06931ded7c0b" id="r_afd0b4d2b309956e9e41f06931ded7c0b"><td class="memTemplParams" colspan="2">template&lt;typename Function&gt; </td></tr>
+<tr class="memitem:afd0b4d2b309956e9e41f06931ded7c0b template"><td class="memItemLeft">long long&#160;</td><td class="memItemRight"><a class="el" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a> (Function action)</td></tr>
+<tr class="memdesc:afd0b4d2b309956e9e41f06931ded7c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Измеряет время выполнения переданной функции в микросекундах.  <br /></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00036">36</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    vector&lt;int&gt; sizes = {100, 200, 500, 1000, 2000, 5000, 10000, 20000, 30000, 40000, 50000, 65000, 80000, 100000, 250000, 500000, 1000000};</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    ofstream timingsFile(<span class="stringliteral">&quot;search_time.csv&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    ofstream collisionsFile(<span class="stringliteral">&quot;collision_count.csv&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!timingsFile.is_open()) {</div>
+<div class="line"><span class="lineno">   44</span>        cout &lt;&lt; <span class="stringliteral">&quot;Ошибка: не удалось открыть файл search_time.csv&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (!collisionsFile.is_open()) {</div>
+<div class="line"><span class="lineno">   49</span>        cout &lt;&lt; <span class="stringliteral">&quot;Ошибка: не удалось открыть файл collision_count.csv&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    timingsFile &lt;&lt; <span class="stringliteral">&quot;size,algorithm,microseconds,found_count\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   54</span>    collisionsFile &lt;&lt; <span class="stringliteral">&quot;size,collisions\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> size : sizes) {</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordtype">string</span> fileName = <span class="stringliteral">&quot;mil_csv_folder/soldiers_&quot;</span> + to_string(size) + <span class="stringliteral">&quot;.csv&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        cout &lt;&lt; <span class="stringliteral">&quot;Обработка файла: &quot;</span> &lt;&lt; fileName &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        vector&lt;Soldier&gt; soldiers = readSoldiersFromCSV(fileName);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> (soldiers.empty()) {</div>
+<div class="line"><span class="lineno">   64</span>            cout &lt;&lt; <span class="stringliteral">&quot;Файл пустой или не был прочитан: &quot;</span> &lt;&lt; fileName &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordtype">string</span> key = soldiers[soldiers.size() / 2].getFullName();</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>        cout &lt;&lt; <span class="stringliteral">&quot;Ключ поиска: &quot;</span> &lt;&lt; key &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>        vector&lt;Soldier&gt; foundLinear;</div>
+<div class="line"><span class="lineno">   73</span>        vector&lt;Soldier&gt; foundBST;</div>
+<div class="line"><span class="lineno">   74</span>        vector&lt;Soldier&gt; foundRBTree;</div>
+<div class="line"><span class="lineno">   75</span>        vector&lt;Soldier&gt; foundHashTable;</div>
+<div class="line"><span class="lineno">   76</span>        vector&lt;Soldier&gt; foundMultiMap;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> linearTime = <a class="code hl_function" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a>([&amp;]() {</div>
+<div class="line"><span class="lineno">   79</span>            foundLinear = <a class="code hl_function" href="_search_algorithms_8h.html#a3943ee690aad38cd388722399b0cbbf5">linearSearchByFullName</a>(soldiers, key);</div>
+<div class="line"><span class="lineno">   80</span>        });</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        timingsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,linear_search,&quot;</span> &lt;&lt; linearTime &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; foundLinear.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_class" href="class_binary_search_tree.html">BinarySearchTree</a> bst;</div>
+<div class="line"><span class="lineno">   85</span>        bst.<a class="code hl_function" href="class_binary_search_tree.html#ab2862dc0655ec6df9a86d6f4235f4984">build</a>(soldiers);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> bstTime = <a class="code hl_function" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a>([&amp;]() {</div>
+<div class="line"><span class="lineno">   88</span>            foundBST = bst.search(key);</div>
+<div class="line"><span class="lineno">   89</span>        });</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>        timingsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,binary_search_tree,&quot;</span> &lt;&lt; bstTime &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; foundBST.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_class" href="class_red_black_tree.html">RedBlackTree</a> rbTree;</div>
+<div class="line"><span class="lineno">   94</span>        rbTree.<a class="code hl_function" href="class_red_black_tree.html#aa0c64b2ed717a3bf431a5c6dd16e12de">build</a>(soldiers);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> rbTreeTime = <a class="code hl_function" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a>([&amp;]() {</div>
+<div class="line"><span class="lineno">   97</span>            foundRBTree = rbTree.search(key);</div>
+<div class="line"><span class="lineno">   98</span>        });</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>        timingsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,red_black_tree,&quot;</span> &lt;&lt; rbTreeTime &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; foundRBTree.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_class" href="class_hash_table.html">HashTable</a> hashTable(size);</div>
+<div class="line"><span class="lineno">  103</span>        hashTable.build(soldiers);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> hashTableTime = <a class="code hl_function" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a>([&amp;]() {</div>
+<div class="line"><span class="lineno">  106</span>            foundHashTable = hashTable.search(key);</div>
+<div class="line"><span class="lineno">  107</span>        });</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        timingsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,hash_table,&quot;</span> &lt;&lt; hashTableTime &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; foundHashTable.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  110</span>        collisionsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; hashTable.getCollisionCount() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>        multimap&lt;string, Soldier&gt; soldierMultiMap = <a class="code hl_function" href="_search_algorithms_8h.html#a5c617af1d65eb8356e3edbca76d1053c">buildMultiMap</a>(soldiers);</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> multiMapTime = <a class="code hl_function" href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a>([&amp;]() {</div>
+<div class="line"><span class="lineno">  115</span>            foundMultiMap = <a class="code hl_function" href="_search_algorithms_8h.html#a7989eb71395f8725e74023b43ba3f509">searchInMultiMap</a>(soldierMultiMap, key);</div>
+<div class="line"><span class="lineno">  116</span>        });</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>        timingsFile &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;,multimap,&quot;</span> &lt;&lt; multiMapTime &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; foundMultiMap.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>        cout &lt;&lt; <span class="stringliteral">&quot;Найдено элементов: &quot;</span> &lt;&lt; foundLinear.size() &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  121</span>        cout &lt;&lt; <span class="stringliteral">&quot;Готово для размера: &quot;</span> &lt;&lt; size &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  122</span>        cout &lt;&lt; <span class="stringliteral">&quot;-----------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    timingsFile.close();</div>
+<div class="line"><span class="lineno">  126</span>    collisionsFile.close();</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    cout &lt;&lt; <span class="stringliteral">&quot;Программа завершена&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+<div class="ttc" id="a_search_algorithms_8h_html_a3943ee690aad38cd388722399b0cbbf5"><div class="ttname"><a href="_search_algorithms_8h.html#a3943ee690aad38cd388722399b0cbbf5">linearSearchByFullName</a></div><div class="ttdeci">vector&lt; Soldier &gt; linearSearchByFullName(const vector&lt; Soldier &gt; &amp;soldiers, const string &amp;key)</div><div class="ttdoc">Выполняет линейный поиск солдат по ФИО.</div><div class="ttdef"><b>Определения</b> <a href="_search_algorithms_8h_source.html#l00023">SearchAlgorithms.h:23</a></div></div>
+<div class="ttc" id="a_search_algorithms_8h_html_a5c617af1d65eb8356e3edbca76d1053c"><div class="ttname"><a href="_search_algorithms_8h.html#a5c617af1d65eb8356e3edbca76d1053c">buildMultiMap</a></div><div class="ttdeci">multimap&lt; string, Soldier &gt; buildMultiMap(const vector&lt; Soldier &gt; &amp;soldiers)</div><div class="ttdoc">Строит стандартную структуру multimap для поиска по ФИО.</div><div class="ttdef"><b>Определения</b> <a href="_search_algorithms_8h_source.html#l00048">SearchAlgorithms.h:48</a></div></div>
+<div class="ttc" id="a_search_algorithms_8h_html_a7989eb71395f8725e74023b43ba3f509"><div class="ttname"><a href="_search_algorithms_8h.html#a7989eb71395f8725e74023b43ba3f509">searchInMultiMap</a></div><div class="ttdeci">vector&lt; Soldier &gt; searchInMultiMap(const multimap&lt; string, Soldier &gt; &amp;mp, const string &amp;key)</div><div class="ttdoc">Выполняет поиск всех солдат с заданным ФИО в multimap.</div><div class="ttdef"><b>Определения</b> <a href="_search_algorithms_8h_source.html#l00069">SearchAlgorithms.h:69</a></div></div>
+<div class="ttc" id="aclass_binary_search_tree_html"><div class="ttname"><a href="class_binary_search_tree.html">BinarySearchTree</a></div><div class="ttdoc">Класс бинарного дерева поиска для объектов Soldier.</div><div class="ttdef"><b>Определения</b> <a href="_binary_search_tree_8h_source.html#l00018">BinarySearchTree.h:18</a></div></div>
+<div class="ttc" id="aclass_binary_search_tree_html_ab2862dc0655ec6df9a86d6f4235f4984"><div class="ttname"><a href="class_binary_search_tree.html#ab2862dc0655ec6df9a86d6f4235f4984">BinarySearchTree::build</a></div><div class="ttdeci">void build(const vector&lt; Soldier &gt; &amp;soldiers)</div><div class="ttdoc">Строит дерево по вектору солдат.</div><div class="ttdef"><b>Определения</b> <a href="_binary_search_tree_8h_source.html#l00149">BinarySearchTree.h:149</a></div></div>
+<div class="ttc" id="aclass_hash_table_html"><div class="ttname"><a href="class_hash_table.html">HashTable</a></div><div class="ttdoc">Хэш-таблица для поиска объектов Soldier по ФИО.</div><div class="ttdef"><b>Определения</b> <a href="_hash_table_8h_source.html#l00019">HashTable.h:19</a></div></div>
+<div class="ttc" id="aclass_red_black_tree_html"><div class="ttname"><a href="class_red_black_tree.html">RedBlackTree</a></div><div class="ttdoc">Класс красно-чёрного дерева для объектов Soldier.</div><div class="ttdef"><b>Определения</b> <a href="_red_black_tree_8h_source.html#l00018">RedBlackTree.h:18</a></div></div>
+<div class="ttc" id="aclass_red_black_tree_html_aa0c64b2ed717a3bf431a5c6dd16e12de"><div class="ttname"><a href="class_red_black_tree.html#aa0c64b2ed717a3bf431a5c6dd16e12de">RedBlackTree::build</a></div><div class="ttdeci">void build(const vector&lt; Soldier &gt; &amp;soldiers)</div><div class="ttdoc">Строит красно-чёрное дерево по вектору солдат.</div><div class="ttdef"><b>Определения</b> <a href="_red_black_tree_8h_source.html#l00310">RedBlackTree.h:310</a></div></div>
+<div class="ttc" id="amain_8cpp_html_afd0b4d2b309956e9e41f06931ded7c0b"><div class="ttname"><a href="#afd0b4d2b309956e9e41f06931ded7c0b">measureTime</a></div><div class="ttdeci">long long measureTime(Function action)</div><div class="ttdoc">Измеряет время выполнения переданной функции в микросекундах.</div><div class="ttdef"><b>Определения</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd0b4d2b309956e9e41f06931ded7c0b" name="afd0b4d2b309956e9e41f06931ded7c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0b4d2b309956e9e41f06931ded7c0b">&#9670;&#160;</a></span>measureTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Function&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">long long measureTime </td>
+          <td>(</td>
+          <td class="paramtype">Function</td>          <td class="paramname"><span class="paramname"><em>action</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Измеряет время выполнения переданной функции в микросекундах. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td>Функция или лямбда-выражение, время выполнения которого нужно измерить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>long long Время выполнения в микросекундах. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00025">25</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keyword">auto</span> start = high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    action();</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keyword">auto</span> end = high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> duration_cast&lt;microseconds&gt;(end - start).count();</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

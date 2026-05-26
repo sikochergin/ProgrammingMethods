@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторная работа 2. Алгоритмы поиска: Класс RedBlackTree</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Лабораторная работа 2. Алгоритмы поиска
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_red_black_tree.html','','class_red_black_tree-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс RedBlackTree</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс красно-чёрного дерева для объектов Soldier.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a16706b7c753cf2d86514cda01840abd9" id="r_a16706b7c753cf2d86514cda01840abd9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a16706b7c753cf2d86514cda01840abd9">RedBlackTree</a> ()</td></tr>
+<tr class="memdesc:a16706b7c753cf2d86514cda01840abd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор пустого красно-чёрного дерева.  <br /></td></tr>
+<tr class="memitem:adddd56045c8ee0eab5fb363cd3f723e3" id="r_adddd56045c8ee0eab5fb363cd3f723e3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adddd56045c8ee0eab5fb363cd3f723e3">RedBlackTree</a> (const <a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp;)=delete</td></tr>
+<tr class="memdesc:adddd56045c8ee0eab5fb363cd3f723e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрещаем копирование дерева.  <br /></td></tr>
+<tr class="memitem:a0f15cffc7179e7d290f5db63b1407bed" id="r_a0f15cffc7179e7d290f5db63b1407bed"><td class="memItemLeft"><a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0f15cffc7179e7d290f5db63b1407bed">operator=</a> (const <a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp;)=delete</td></tr>
+<tr class="memitem:adc4f58dc004c1d8ef4aaa41741ebd33e" id="r_adc4f58dc004c1d8ef4aaa41741ebd33e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adc4f58dc004c1d8ef4aaa41741ebd33e">~RedBlackTree</a> ()</td></tr>
+<tr class="memdesc:adc4f58dc004c1d8ef4aaa41741ebd33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор дерева.  <br /></td></tr>
+<tr class="memitem:ad7783057fe8ce543d8831fd778f6c33c" id="r_ad7783057fe8ce543d8831fd778f6c33c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad7783057fe8ce543d8831fd778f6c33c">insert</a> (const Soldier &amp;soldier)</td></tr>
+<tr class="memdesc:ad7783057fe8ce543d8831fd778f6c33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет одного солдата в красно-чёрное дерево.  <br /></td></tr>
+<tr class="memitem:aa0c64b2ed717a3bf431a5c6dd16e12de" id="r_aa0c64b2ed717a3bf431a5c6dd16e12de"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0c64b2ed717a3bf431a5c6dd16e12de">build</a> (const vector&lt; Soldier &gt; &amp;soldiers)</td></tr>
+<tr class="memdesc:aa0c64b2ed717a3bf431a5c6dd16e12de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Строит красно-чёрное дерево по вектору солдат.  <br /></td></tr>
+<tr class="memitem:a95b77701e15aaee7a8499d1484f2f1cb" id="r_a95b77701e15aaee7a8499d1484f2f1cb"><td class="memItemLeft">vector&lt; Soldier &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a95b77701e15aaee7a8499d1484f2f1cb">search</a> (const string &amp;key) const</td></tr>
+<tr class="memdesc:a95b77701e15aaee7a8499d1484f2f1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет всех солдат с заданным ФИО.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс красно-чёрного дерева для объектов Soldier. </p>
+<p>Дерево строится по ключу fullName. Если несколько солдат имеют одинаковое ФИО, они хранятся в одном узле вектора values. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00018">18</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a16706b7c753cf2d86514cda01840abd9" name="a16706b7c753cf2d86514cda01840abd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16706b7c753cf2d86514cda01840abd9">&#9670;&#160;</a></span>RedBlackTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RedBlackTree::RedBlackTree </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор пустого красно-чёрного дерева. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00232">232</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>        root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adddd56045c8ee0eab5fb363cd3f723e3" name="adddd56045c8ee0eab5fb363cd3f723e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adddd56045c8ee0eab5fb363cd3f723e3">&#9670;&#160;</a></span>RedBlackTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RedBlackTree::RedBlackTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запрещаем копирование дерева. </p>
+<p>Это нужно, чтобы два объекта <a class="el" href="class_red_black_tree.html" title="Класс красно-чёрного дерева для объектов Soldier.">RedBlackTree</a> случайно не указывали на одни и те же узлы. </p>
+
+</div>
+</div>
+<a id="adc4f58dc004c1d8ef4aaa41741ebd33e" name="adc4f58dc004c1d8ef4aaa41741ebd33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4f58dc004c1d8ef4aaa41741ebd33e">&#9670;&#160;</a></span>~RedBlackTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RedBlackTree::~RedBlackTree </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор дерева. </p>
+<p>Удаляет все динамически созданные узлы. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00251">251</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>        clear(root);</div>
+<div class="line"><span class="lineno">  254</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aa0c64b2ed717a3bf431a5c6dd16e12de" name="aa0c64b2ed717a3bf431a5c6dd16e12de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c64b2ed717a3bf431a5c6dd16e12de">&#9670;&#160;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RedBlackTree::build </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; Soldier &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>soldiers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Строит красно-чёрное дерево по вектору солдат. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soldiers</td><td>Вектор солдат. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00310">310</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>    {</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> Soldier&amp; soldier : soldiers) {</div>
+<div class="line"><span class="lineno">  313</span>            <a class="code hl_function" href="#ad7783057fe8ce543d8831fd778f6c33c">insert</a>(soldier);</div>
+<div class="line"><span class="lineno">  314</span>        }</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+<div class="ttc" id="aclass_red_black_tree_html_ad7783057fe8ce543d8831fd778f6c33c"><div class="ttname"><a href="#ad7783057fe8ce543d8831fd778f6c33c">RedBlackTree::insert</a></div><div class="ttdeci">void insert(const Soldier &amp;soldier)</div><div class="ttdoc">Добавляет одного солдата в красно-чёрное дерево.</div><div class="ttdef"><b>Определения</b> <a href="_red_black_tree_8h_source.html#l00264">RedBlackTree.h:264</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad7783057fe8ce543d8831fd778f6c33c" name="ad7783057fe8ce543d8831fd778f6c33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7783057fe8ce543d8831fd778f6c33c">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RedBlackTree::insert </td>
+          <td>(</td>
+          <td class="paramtype">const Soldier &amp;</td>          <td class="paramname"><span class="paramname"><em>soldier</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет одного солдата в красно-чёрное дерево. </p>
+<p>Сначала вставка выполняется как в обычном бинарном дереве поиска. После этого вызывается fixInsert, чтобы восстановить балансировку.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soldier</td><td>Солдат, которого нужно добавить. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00264">264</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>    {</div>
+<div class="line"><span class="lineno">  266</span>        <span class="keywordtype">string</span> key = soldier.getFullName();</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">if</span> (root == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  269</span>            root = <span class="keyword">new</span> Node(soldier);</div>
+<div class="line"><span class="lineno">  270</span>            root-&gt;color = BLACK;</div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  272</span>        }</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>        Node* current = root;</div>
+<div class="line"><span class="lineno">  275</span>        Node* parent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>        <span class="keywordflow">while</span> (current != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  278</span>            parent = current;</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">if</span> (key &lt; current-&gt;key) {</div>
+<div class="line"><span class="lineno">  281</span>                current = current-&gt;left;</div>
+<div class="line"><span class="lineno">  282</span>            }</div>
+<div class="line"><span class="lineno">  283</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &gt; current-&gt;key) {</div>
+<div class="line"><span class="lineno">  284</span>                current = current-&gt;right;</div>
+<div class="line"><span class="lineno">  285</span>            }</div>
+<div class="line"><span class="lineno">  286</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  287</span>                current-&gt;values.push_back(soldier);</div>
+<div class="line"><span class="lineno">  288</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  289</span>            }</div>
+<div class="line"><span class="lineno">  290</span>        }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>        Node* newNode = <span class="keyword">new</span> Node(soldier);</div>
+<div class="line"><span class="lineno">  293</span>        newNode-&gt;parent = parent;</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span>        <span class="keywordflow">if</span> (key &lt; parent-&gt;key) {</div>
+<div class="line"><span class="lineno">  296</span>            parent-&gt;left = newNode;</div>
+<div class="line"><span class="lineno">  297</span>        }</div>
+<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  299</span>            parent-&gt;right = newNode;</div>
+<div class="line"><span class="lineno">  300</span>        }</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>        fixInsert(newNode);</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0f15cffc7179e7d290f5db63b1407bed" name="a0f15cffc7179e7d290f5db63b1407bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f15cffc7179e7d290f5db63b1407bed">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp; RedBlackTree::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_red_black_tree.html">RedBlackTree</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95b77701e15aaee7a8499d1484f2f1cb" name="a95b77701e15aaee7a8499d1484f2f1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b77701e15aaee7a8499d1484f2f1cb">&#9670;&#160;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; Soldier &gt; RedBlackTree::search </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ищет всех солдат с заданным ФИО. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>ФИО, которое нужно найти. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>vector&lt;Soldier&gt; Вектор найденных солдат. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a> строка <a class="el" href="_red_black_tree_8h_source.html#l00323">323</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>    {</div>
+<div class="line"><span class="lineno">  325</span>        <span class="keywordflow">return</span> search(root, key);</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="_red_black_tree_8h_source.html">RedBlackTree.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_red_black_tree.html">RedBlackTree</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

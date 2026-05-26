@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторная работа 2. Алгоритмы поиска: Класс BinarySearchTree</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Лабораторная работа 2. Алгоритмы поиска
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_binary_search_tree.html','','class_binary_search_tree-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс BinarySearchTree</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс бинарного дерева поиска для объектов Soldier.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a5351a78a161520116785f8eefbb91183" id="r_a5351a78a161520116785f8eefbb91183"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5351a78a161520116785f8eefbb91183">BinarySearchTree</a> ()</td></tr>
+<tr class="memdesc:a5351a78a161520116785f8eefbb91183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор пустого дерева.  <br /></td></tr>
+<tr class="memitem:a7e6fd54bec4c539cfcb8404b1ff3f98d" id="r_a7e6fd54bec4c539cfcb8404b1ff3f98d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7e6fd54bec4c539cfcb8404b1ff3f98d">~BinarySearchTree</a> ()</td></tr>
+<tr class="memdesc:a7e6fd54bec4c539cfcb8404b1ff3f98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор дерева.  <br /></td></tr>
+<tr class="memitem:ab2d6e3ada9f92fc7c22833be4114e9e0" id="r_ab2d6e3ada9f92fc7c22833be4114e9e0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab2d6e3ada9f92fc7c22833be4114e9e0">insert</a> (const Soldier &amp;soldier)</td></tr>
+<tr class="memdesc:ab2d6e3ada9f92fc7c22833be4114e9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет одного солдата в дерево.  <br /></td></tr>
+<tr class="memitem:ab2862dc0655ec6df9a86d6f4235f4984" id="r_ab2862dc0655ec6df9a86d6f4235f4984"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab2862dc0655ec6df9a86d6f4235f4984">build</a> (const vector&lt; Soldier &gt; &amp;soldiers)</td></tr>
+<tr class="memdesc:ab2862dc0655ec6df9a86d6f4235f4984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Строит дерево по вектору солдат.  <br /></td></tr>
+<tr class="memitem:a509ecd24f70ec673a8f13924a829bf37" id="r_a509ecd24f70ec673a8f13924a829bf37"><td class="memItemLeft">vector&lt; Soldier &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a509ecd24f70ec673a8f13924a829bf37">search</a> (const string &amp;key) const</td></tr>
+<tr class="memdesc:a509ecd24f70ec673a8f13924a829bf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет всех солдат с заданным ФИО.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс бинарного дерева поиска для объектов Soldier. </p>
+<p>Дерево строится по ключу fullName. Если несколько солдат имеют одинаковое ФИО, они хранятся в одном узле вектора values. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00018">18</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a5351a78a161520116785f8eefbb91183" name="a5351a78a161520116785f8eefbb91183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5351a78a161520116785f8eefbb91183">&#9670;&#160;</a></span>BinarySearchTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BinarySearchTree::BinarySearchTree </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор пустого дерева. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00118">118</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
+<div class="line"><span class="lineno">  120</span>        root = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7e6fd54bec4c539cfcb8404b1ff3f98d" name="a7e6fd54bec4c539cfcb8404b1ff3f98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6fd54bec4c539cfcb8404b1ff3f98d">&#9670;&#160;</a></span>~BinarySearchTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BinarySearchTree::~BinarySearchTree </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор дерева. </p>
+<p>Автоматически удаляет все узлы дерева, чтобы не было утечек памяти. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00129">129</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>        clear(root);</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ab2862dc0655ec6df9a86d6f4235f4984" name="ab2862dc0655ec6df9a86d6f4235f4984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2862dc0655ec6df9a86d6f4235f4984">&#9670;&#160;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BinarySearchTree::build </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; Soldier &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>soldiers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Строит дерево по вектору солдат. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soldiers</td><td>Вектор солдат. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00149">149</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>    {</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> Soldier&amp; soldier : soldiers) {</div>
+<div class="line"><span class="lineno">  152</span>            insert(soldier);</div>
+<div class="line"><span class="lineno">  153</span>        }</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2d6e3ada9f92fc7c22833be4114e9e0" name="ab2d6e3ada9f92fc7c22833be4114e9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d6e3ada9f92fc7c22833be4114e9e0">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BinarySearchTree::insert </td>
+          <td>(</td>
+          <td class="paramtype">const Soldier &amp;</td>          <td class="paramname"><span class="paramname"><em>soldier</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет одного солдата в дерево. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soldier</td><td>Солдат, которого нужно добавить. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00139">139</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>        insert(root, soldier);</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a509ecd24f70ec673a8f13924a829bf37" name="a509ecd24f70ec673a8f13924a829bf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509ecd24f70ec673a8f13924a829bf37">&#9670;&#160;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; Soldier &gt; BinarySearchTree::search </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ищет всех солдат с заданным ФИО. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>ФИО, которое нужно найти. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>vector&lt;Soldier&gt; Вектор найденных солдат. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a> строка <a class="el" href="_binary_search_tree_8h_source.html#l00162">162</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">return</span> search(root, key);</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="_binary_search_tree_8h_source.html">BinarySearchTree.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_binary_search_tree.html">BinarySearchTree</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
