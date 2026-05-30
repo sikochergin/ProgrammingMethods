@@ -155,7 +155,7 @@ template <class Func> long long measureTime(Func func) {
  * @return Код завершения программы.
  */
 int main() {
-    vector<int> dataSizes = {100, 200, 500, 1000, 2000, 5000, 10000, 15000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
+    vector<int> dataSizes = {100, 200, 400, 750, 1000, 1500, 2000, 3000, 5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 35000, 40000};
 
     ofstream resultFile("sortingtime.csv");
 
@@ -225,7 +225,7 @@ int main() {
 
     resultFile.close();
 
-    cout << "Работа программы завершена. Результаты записаны в sortingtime.csv" << endl;
+    cout << "Работа завершена" << endl;
 
     return 0;
 }
