@@ -58,10 +58,10 @@ int getRankPriority(const string& rank) {
  */
 class Soldier {
 private:
-    string fullName;       ///< ФИО служащего.
-    string rank;           ///< Воинское звание.
-    int companyNumber;     ///< Номер роты.
-    int age;               ///< Возраст.
+    string fullName; //ФИО служащего.
+    string rank; //воинское звание.
+    int companyNumber; //номер роты.
+    int age; //возраст.
 
 public:
     /**

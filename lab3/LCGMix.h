@@ -24,12 +24,12 @@ private:
     /**
      * @brief Множитель LCG.
      */
-    static constexpr uint32_t A = 1664525u;
+    static const uint32_t A = 1664525u;
 
     /**
      * @brief Приращение LCG.
      */
-    static constexpr uint32_t C = 1013904223u;
+    static const uint32_t C = 1013904223u;
 
     /**
      * @brief Перемешивает биты числа.

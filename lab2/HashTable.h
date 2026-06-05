@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include <stdexcept>
+#include <iostream>
 
 #include "../lab1/soldier.h"
 
@@ -45,19 +45,18 @@ private:
     /**
      * @brief Вычисляет хэш строки.
      *
-     * Используется вариант FNV-1a хэширования.
-     *
      * @param key Строковый ключ.
      * @return int Индекс в таблице.
      */
     int hashFunction(const string& key) const
     {
-        unsigned long long hash = 1469598103934665603ULL;
-        const unsigned long long prime = 1099511628211ULL;
+        const int P = 31;
+        unsigned long long hash = 0;
+        unsigned long long power = 1;
 
         for (char symbol : key) {
-            hash = hash ^ static_cast<unsigned char>(symbol);
-            hash = hash * prime;
+            hash += static_cast<unsigned char>(symbol) * power;
+            power *= P;
         }
 
         return hash % sizet;
@@ -94,18 +93,32 @@ public:
         int index = hashFunction(key);
         int startIndex = index;
 
+        bool counted = false; // коллизию для одной вставки считаем не более одного раза
+
         while (table[index].occupied) {
             if (table[index].key == key) {
                 table[index].values.push_back(soldier);
-                return;
+
+                if (counted){
+                    collisionCount--;
+                }
+
+                return; // дубликат того же ключа — это не коллизия
             }
 
-            collisionCount++;
+            // исходная ячейка занята ЧУЖИМ ключом — это коллизия,
+            // но фиксируем её только один раз за вставку нового ключа,
+            // а не на каждом шаге линейного пробирования
+            if (!counted) {
+                collisionCount++;
+                counted = true;
+            }
 
             index = (index + 1) % sizet;
 
             if (index == startIndex) {
-                throw runtime_error("Hash table is full");
+                cout<<"Hash table is full"<<endl;
+                return;
             }
         }
 

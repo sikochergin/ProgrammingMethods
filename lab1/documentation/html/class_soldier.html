@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Laboratory work 1. Sorting algorithms: Класс Soldier</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Laboratory work 1. Sorting algorithms
+   </div>
+   <div id="projectbrief">Comparison of sorting algorithms for military staff records</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_soldier.html','','class_soldier-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Soldier</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для хранения информации о служащем воинского полка.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="soldier_8h_source.html">soldier.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ada77a457545f566e5afd3f5b23c46f54" id="r_ada77a457545f566e5afd3f5b23c46f54"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ada77a457545f566e5afd3f5b23c46f54">Soldier</a> (string fullName, string rank, int companyNumber, int age)</td></tr>
+<tr class="memdesc:ada77a457545f566e5afd3f5b23c46f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор.  <br /></td></tr>
+<tr class="memitem:a825b1d0c937f74121bf473f3d0859af0" id="r_a825b1d0c937f74121bf473f3d0859af0"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a825b1d0c937f74121bf473f3d0859af0">getFullName</a> () const</td></tr>
+<tr class="memdesc:a825b1d0c937f74121bf473f3d0859af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ФИО служащего.  <br /></td></tr>
+<tr class="memitem:a359cfd4b84a8d81f16f2088273c45f53" id="r_a359cfd4b84a8d81f16f2088273c45f53"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a359cfd4b84a8d81f16f2088273c45f53">getRank</a> () const</td></tr>
+<tr class="memdesc:a359cfd4b84a8d81f16f2088273c45f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает воинское звание.  <br /></td></tr>
+<tr class="memitem:a1512ec7d057c7db381ef477efdf8ed18" id="r_a1512ec7d057c7db381ef477efdf8ed18"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a1512ec7d057c7db381ef477efdf8ed18">getCompanyNumber</a> () const</td></tr>
+<tr class="memdesc:a1512ec7d057c7db381ef477efdf8ed18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает номер роты.  <br /></td></tr>
+<tr class="memitem:ab623d765328cbcadd5aefbe6349693e8" id="r_ab623d765328cbcadd5aefbe6349693e8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab623d765328cbcadd5aefbe6349693e8">getAge</a> () const</td></tr>
+<tr class="memdesc:ab623d765328cbcadd5aefbe6349693e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает возраст.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a80d23157f96fcee705d9a74d01f6b26d" id="r_a80d23157f96fcee705d9a74d01f6b26d"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a80d23157f96fcee705d9a74d01f6b26d">fullName</a></td></tr>
+<tr class="memitem:ab08d57e6d4503abee8d1a1c6ef819c7c" id="r_ab08d57e6d4503abee8d1a1c6ef819c7c"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ab08d57e6d4503abee8d1a1c6ef819c7c">rank</a></td></tr>
+<tr class="memitem:a93939a83e3644f752f956771ee87b790" id="r_a93939a83e3644f752f956771ee87b790"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a93939a83e3644f752f956771ee87b790">companyNumber</a></td></tr>
+<tr class="memitem:ae0ea5069ff5653cde1f2406c4ebf8c23" id="r_ae0ea5069ff5653cde1f2406c4ebf8c23"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae0ea5069ff5653cde1f2406c4ebf8c23">age</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для хранения информации о служащем воинского полка. </p>
+<p>Объект класса содержит ФИО, звание, номер роты и возраст. Сравнение служащих выполняется по полям: звание, ФИО, номер роты. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00059">59</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ada77a457545f566e5afd3f5b23c46f54" name="ada77a457545f566e5afd3f5b23c46f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada77a457545f566e5afd3f5b23c46f54">&#9670;&#160;</a></span>Soldier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Soldier::Soldier </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fullName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rank</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>companyNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>age</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fullName</td><td>ФИО служащего. </td></tr>
+    <tr><td class="paramname">rank</td><td>Воинское звание. </td></tr>
+    <tr><td class="paramname">companyNumber</td><td>Номер роты. </td></tr>
+    <tr><td class="paramname">age</td><td>Возраст. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00075">75</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ab623d765328cbcadd5aefbe6349693e8" name="ab623d765328cbcadd5aefbe6349693e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab623d765328cbcadd5aefbe6349693e8">&#9670;&#160;</a></span>getAge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Soldier::getAge </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает возраст. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возраст. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00110">110</a></p>
+
+</div>
+</div>
+<a id="a1512ec7d057c7db381ef477efdf8ed18" name="a1512ec7d057c7db381ef477efdf8ed18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1512ec7d057c7db381ef477efdf8ed18">&#9670;&#160;</a></span>getCompanyNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Soldier::getCompanyNumber </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает номер роты. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Номер роты. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00102">102</a></p>
+
+</div>
+</div>
+<a id="a825b1d0c937f74121bf473f3d0859af0" name="a825b1d0c937f74121bf473f3d0859af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825b1d0c937f74121bf473f3d0859af0">&#9670;&#160;</a></span>getFullName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Soldier::getFullName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает ФИО служащего. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ФИО служащего. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00086">86</a></p>
+
+</div>
+</div>
+<a id="a359cfd4b84a8d81f16f2088273c45f53" name="a359cfd4b84a8d81f16f2088273c45f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359cfd4b84a8d81f16f2088273c45f53">&#9670;&#160;</a></span>getRank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Soldier::getRank </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает воинское звание. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Воинское звание. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00094">94</a></p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="ae0ea5069ff5653cde1f2406c4ebf8c23" name="ae0ea5069ff5653cde1f2406c4ebf8c23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ea5069ff5653cde1f2406c4ebf8c23">&#9670;&#160;</a></span>age</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Soldier::age</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a id="a93939a83e3644f752f956771ee87b790" name="a93939a83e3644f752f956771ee87b790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93939a83e3644f752f956771ee87b790">&#9670;&#160;</a></span>companyNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Soldier::companyNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a id="a80d23157f96fcee705d9a74d01f6b26d" name="a80d23157f96fcee705d9a74d01f6b26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d23157f96fcee705d9a74d01f6b26d">&#9670;&#160;</a></span>fullName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Soldier::fullName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a id="ab08d57e6d4503abee8d1a1c6ef819c7c" name="ab08d57e6d4503abee8d1a1c6ef819c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab08d57e6d4503abee8d1a1c6ef819c7c">&#9670;&#160;</a></span>rank</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Soldier::rank</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="soldier_8h_source.html">soldier.h</a> строка <a class="el" href="soldier_8h_source.html#l00062">62</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="soldier_8h_source.html">soldier.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_soldier.html">Soldier</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

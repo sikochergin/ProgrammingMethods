@@ -1,0 +1,922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЛР3 - Генераторы псевдослучайных чисел: Файл main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ЛР3 - Генераторы псевдослучайных чисел<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Исследование и модификация генераторов псевдослучайных чисел</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &quot;<a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_middle_square_weyl_8h_source.html">MiddleSquareWeyl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_rotate_shift_mix_8h_source.html">RotateShiftMix.h</a>&quot;</code><br />
+</div>
+<p><a href="main_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:BasicStats" id="r_BasicStats"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_basic_stats.html">BasicStats</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура для хранения базовых статистических характеристик выборки.  <a href="struct_basic_stats.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:ChiSquareResult" id="r_ChiSquareResult"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_chi_square_result.html">ChiSquareResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура для хранения результата Хи-квадрат проверки равномерности.  <a href="struct_chi_square_result.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:Sample" id="r_Sample"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_sample.html">Sample</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура для хранения одной выборки.  <a href="struct_sample.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:TestResult" id="r_TestResult"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_test_result.html">TestResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура для хранения результата одного теста.  <a href="struct_test_result.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a4481a9847461ea931943acbf3fc3b211" id="r_a4481a9847461ea931943acbf3fc3b211"><td class="memItemLeft"><a class="el" href="struct_basic_stats.html">BasicStats</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4481a9847461ea931943acbf3fc3b211">calculateBasicStats</a> (const std::vector&lt; double &gt; &amp;values)</td></tr>
+<tr class="memdesc:a4481a9847461ea931943acbf3fc3b211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает все базовые статистические характеристики выборки.  <br /></td></tr>
+<tr class="memitem:aabc8f4104a468c60fc1003710d2f0a02" id="r_aabc8f4104a468c60fc1003710d2f0a02"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aabc8f4104a468c60fc1003710d2f0a02">calculateCoefficientVariation</a> (double mean, double stddev)</td></tr>
+<tr class="memdesc:aabc8f4104a468c60fc1003710d2f0a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает коэффициент вариации.  <br /></td></tr>
+<tr class="memitem:a434f7667defb7b5df70485fc98cf7444" id="r_a434f7667defb7b5df70485fc98cf7444"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a434f7667defb7b5df70485fc98cf7444">calculateMean</a> (const std::vector&lt; double &gt; &amp;values)</td></tr>
+<tr class="memdesc:a434f7667defb7b5df70485fc98cf7444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает среднее значение выборки.  <br /></td></tr>
+<tr class="memitem:ab45587afbc0cfed02de1567688592e31" id="r_ab45587afbc0cfed02de1567688592e31"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ab45587afbc0cfed02de1567688592e31">calculateStddev</a> (const std::vector&lt; double &gt; &amp;values, double mean)</td></tr>
+<tr class="memdesc:ab45587afbc0cfed02de1567688592e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает стандартное отклонение выборки.  <br /></td></tr>
+<tr class="memitem:a2c295fb0d87bbb349dad372f8aaa6f7b" id="r_a2c295fb0d87bbb349dad372f8aaa6f7b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a2c295fb0d87bbb349dad372f8aaa6f7b">chiSquareCriticalValue</a> (int degreesOfFreedom, double alpha)</td></tr>
+<tr class="memdesc:a2c295fb0d87bbb349dad372f8aaa6f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приближенно считает правое критическое значение Хи-квадрат.  <br /></td></tr>
+<tr class="memitem:af955a98786dc7ef5849c8310b9ce67c6" id="r_af955a98786dc7ef5849c8310b9ce67c6"><td class="memItemLeft"><a class="el" href="struct_chi_square_result.html">ChiSquareResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#af955a98786dc7ef5849c8310b9ce67c6">chiSquareUniformTest</a> (const std::vector&lt; double &gt; &amp;values)</td></tr>
+<tr class="memdesc:af955a98786dc7ef5849c8310b9ce67c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет нормированные значения на равномерность распределения.  <br /></td></tr>
+<tr class="memitem:afe1b595eefaf3e54f2fb23a27179dd3d" id="r_afe1b595eefaf3e54f2fb23a27179dd3d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#afe1b595eefaf3e54f2fb23a27179dd3d">countOneBits</a> (uint32_t value)</td></tr>
+<tr class="memdesc:afe1b595eefaf3e54f2fb23a27179dd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считает количество единичных битов в числе.  <br /></td></tr>
+<tr class="memitem:a99e540365e6f12b1647db234f0538d16" id="r_a99e540365e6f12b1647db234f0538d16"><td class="memItemLeft"><a class="el" href="struct_test_result.html">TestResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#a99e540365e6f12b1647db234f0538d16">frequencyTest</a> (const std::vector&lt; uint32_t &gt; &amp;values)</td></tr>
+<tr class="memdesc:a99e540365e6f12b1647db234f0538d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Частотный битовый тест.  <br /></td></tr>
+<tr class="memitem:a85f8ab3928c62758556bfecfa69d0472" id="r_a85f8ab3928c62758556bfecfa69d0472"><td class="memTemplParams" colspan="2">template&lt;typename Generator&gt; </td></tr>
+<tr class="memitem:a85f8ab3928c62758556bfecfa69d0472 template"><td class="memItemLeft"><a class="el" href="struct_sample.html">Sample</a>&#160;</td><td class="memItemRight"><a class="el" href="#a85f8ab3928c62758556bfecfa69d0472">generateSample</a> (Generator &amp;generator, int sampleSize)</td></tr>
+<tr class="memdesc:a85f8ab3928c62758556bfecfa69d0472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерирует одну выборку для переданного генератора.  <br /></td></tr>
+<tr class="memitem:aa4fe316e51949c6e48d76abc44033f63" id="r_aa4fe316e51949c6e48d76abc44033f63"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aa4fe316e51949c6e48d76abc44033f63">inverseNormalCDF</a> (double p)</td></tr>
+<tr class="memdesc:aa4fe316e51949c6e48d76abc44033f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приближенно считает обратную функцию стандартного нормального распределения.  <br /></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memitem:a678b6e52e620fc80db0e3aacf01d082f" id="r_a678b6e52e620fc80db0e3aacf01d082f"><td class="memTemplParams" colspan="2">template&lt;typename Generator&gt; </td></tr>
+<tr class="memitem:a678b6e52e620fc80db0e3aacf01d082f template"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a678b6e52e620fc80db0e3aacf01d082f">measureCustomGeneratorSpeed</a> (uint32_t seed, int count)</td></tr>
+<tr class="memdesc:a678b6e52e620fc80db0e3aacf01d082f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Замеряет время генерации чисел для одного из наших генераторов.  <br /></td></tr>
+<tr class="memitem:a56c2b4ea54e7b65dc680387bc09940f0" id="r_a56c2b4ea54e7b65dc680387bc09940f0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a56c2b4ea54e7b65dc680387bc09940f0">measureMt19937Speed</a> (uint32_t seed, int count)</td></tr>
+<tr class="memdesc:a56c2b4ea54e7b65dc680387bc09940f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Замеряет время генерации чисел для стандартного генератора std::mt19937.  <br /></td></tr>
+<tr class="memitem:a12676e607944ca81a655c8ca746eead5" id="r_a12676e607944ca81a655c8ca746eead5"><td class="memItemLeft"><a class="el" href="struct_test_result.html">TestResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#a12676e607944ca81a655c8ca746eead5">overlappingPermutationsTest</a> (const std::vector&lt; double &gt; &amp;values)</td></tr>
+<tr class="memdesc:a12676e607944ca81a655c8ca746eead5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlapping permutations test.  <br /></td></tr>
+<tr class="memitem:ac0643349b839d198ac76182a2810728a" id="r_ac0643349b839d198ac76182a2810728a"><td class="memItemLeft"><a class="el" href="struct_test_result.html">TestResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac0643349b839d198ac76182a2810728a">poker4Test</a> (const std::vector&lt; uint32_t &gt; &amp;values)</td></tr>
+<tr class="memdesc:ac0643349b839d198ac76182a2810728a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poker 4-bit test.  <br /></td></tr>
+<tr class="memitem:a2223703d95f79762eab2a396afcb127e" id="r_a2223703d95f79762eab2a396afcb127e"><td class="memItemLeft">std::vector&lt; <a class="el" href="struct_test_result.html">TestResult</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2223703d95f79762eab2a396afcb127e">runAllTests</a> (const <a class="el" href="struct_sample.html">Sample</a> &amp;sample)</td></tr>
+<tr class="memdesc:a2223703d95f79762eab2a396afcb127e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает все тесты для одной выборки.  <br /></td></tr>
+<tr class="memitem:a29bae0975bee11dd06a844872594f950" id="r_a29bae0975bee11dd06a844872594f950"><td class="memTemplParams" colspan="2">template&lt;typename Generator&gt; </td></tr>
+<tr class="memitem:a29bae0975bee11dd06a844872594f950 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a29bae0975bee11dd06a844872594f950">runGeneratorExperiments</a> (std::ofstream &amp;summaryFile, std::ofstream &amp;testsFile, uint32_t baseSeed)</td></tr>
+<tr class="memdesc:a29bae0975bee11dd06a844872594f950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает эксперименты для одного генератора.  <br /></td></tr>
+<tr class="memitem:a37b7d6368a60c288a637f7dae55ccb5c" id="r_a37b7d6368a60c288a637f7dae55ccb5c"><td class="memItemLeft"><a class="el" href="struct_test_result.html">TestResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#a37b7d6368a60c288a637f7dae55ccb5c">runsTest</a> (const std::vector&lt; uint32_t &gt; &amp;values)</td></tr>
+<tr class="memdesc:a37b7d6368a60c288a637f7dae55ccb5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тест серий битов.  <br /></td></tr>
+<tr class="memitem:ac87654150ff77f4883d6e32d8e263fe3" id="r_ac87654150ff77f4883d6e32d8e263fe3"><td class="memItemLeft"><a class="el" href="struct_test_result.html">TestResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac87654150ff77f4883d6e32d8e263fe3">serial2Test</a> (const std::vector&lt; uint32_t &gt; &amp;values)</td></tr>
+<tr class="memdesc:ac87654150ff77f4883d6e32d8e263fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial 2-bit test.  <br /></td></tr>
+<tr class="memitem:a12db4271188f0858affe8dba3ef0bbdf" id="r_a12db4271188f0858affe8dba3ef0bbdf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a12db4271188f0858affe8dba3ef0bbdf">writeSpeedResults</a> (std::ofstream &amp;speedFile)</td></tr>
+<tr class="memdesc:a12db4271188f0858affe8dba3ef0bbdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает результаты замера скорости в speed.csv.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a43867a47ec63b3b2eb1c3645214f0a1c" id="r_a43867a47ec63b3b2eb1c3645214f0a1c"><td class="memItemLeft">const double&#160;</td><td class="memItemRight"><a class="el" href="#a43867a47ec63b3b2eb1c3645214f0a1c">TWO32</a> = 4294967296.0</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a4481a9847461ea931943acbf3fc3b211" name="a4481a9847461ea931943acbf3fc3b211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4481a9847461ea931943acbf3fc3b211">&#9670;&#160;</a></span>calculateBasicStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_basic_stats.html">BasicStats</a> calculateBasicStats </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает все базовые статистические характеристики выборки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>выборка нормированных значений </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_basic_stats.html" title="Структура для хранения базовых статистических характеристик выборки.">BasicStats</a> структура со средним, отклонением и коэффициентом вариации </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00164">164</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00150">calculateCoefficientVariation()</a>, <a class="el" href="main_8cpp_source.html#l00101">calculateMean()</a>, <a class="el" href="main_8cpp_source.html#l00125">calculateStddev()</a>, <a class="el" href="main_8cpp_source.html#l00039">BasicStats::coefficientVariation</a>, <a class="el" href="main_8cpp_source.html#l00037">BasicStats::mean</a> и <a class="el" href="main_8cpp_source.html#l00038">BasicStats::stddev</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00573">runGeneratorExperiments()</a>.</p>
+
+</div>
+</div>
+<a id="aabc8f4104a468c60fc1003710d2f0a02" name="aabc8f4104a468c60fc1003710d2f0a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc8f4104a468c60fc1003710d2f0a02">&#9670;&#160;</a></span>calculateCoefficientVariation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double calculateCoefficientVariation </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mean</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>stddev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает коэффициент вариации. </p>
+<p>Коэффициент вариации равен стандартному отклонению, деленному на среднее значение.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mean</td><td>среднее значение </td></tr>
+    <tr><td class="paramname">stddev</td><td>стандартное отклонение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double коэффициент вариации </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00150">150</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00164">calculateBasicStats()</a>.</p>
+
+</div>
+</div>
+<a id="a434f7667defb7b5df70485fc98cf7444" name="a434f7667defb7b5df70485fc98cf7444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434f7667defb7b5df70485fc98cf7444">&#9670;&#160;</a></span>calculateMean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double calculateMean </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает среднее значение выборки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>выборка нормированных значений </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double среднее значение </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00101">101</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00164">calculateBasicStats()</a>.</p>
+
+</div>
+</div>
+<a id="ab45587afbc0cfed02de1567688592e31" name="ab45587afbc0cfed02de1567688592e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45587afbc0cfed02de1567688592e31">&#9670;&#160;</a></span>calculateStddev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double calculateStddev </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mean</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает стандартное отклонение выборки. </p>
+<p>Стандартное отклонение показывает, насколько сильно значения в среднем отклоняются от среднего значения.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>выборка нормированных значений </td></tr>
+    <tr><td class="paramname">mean</td><td>заранее посчитанное среднее значение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double стандартное отклонение </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00125">125</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00164">calculateBasicStats()</a>.</p>
+
+</div>
+</div>
+<a id="a2c295fb0d87bbb349dad372f8aaa6f7b" name="a2c295fb0d87bbb349dad372f8aaa6f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c295fb0d87bbb349dad372f8aaa6f7b">&#9670;&#160;</a></span>chiSquareCriticalValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double chiSquareCriticalValue </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>degreesOfFreedom</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Приближенно считает правое критическое значение Хи-квадрат. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00251">251</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00187">inverseNormalCDF()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00525">chiSquareUniformTest()</a>, <a class="el" href="main_8cpp_source.html#l00438">overlappingPermutationsTest()</a>, <a class="el" href="main_8cpp_source.html#l00398">poker4Test()</a> и <a class="el" href="main_8cpp_source.html#l00361">serial2Test()</a>.</p>
+
+</div>
+</div>
+<a id="af955a98786dc7ef5849c8310b9ce67c6" name="af955a98786dc7ef5849c8310b9ce67c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af955a98786dc7ef5849c8310b9ce67c6">&#9670;&#160;</a></span>chiSquareUniformTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chi_square_result.html">ChiSquareResult</a> chiSquareUniformTest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет нормированные значения на равномерность распределения. </p>
+<p>Значения из диапазона [0, 1) делятся на несколько равных интервалов. Если распределение равномерное, то в каждый интервал должно попасть примерно одинаковое количество значений.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>нормированные значения из диапазона [0, 1) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_chi_square_result.html" title="Структура для хранения результата Хи-квадрат проверки равномерности.">ChiSquareResult</a> результат проверки </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00525">525</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00251">chiSquareCriticalValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00573">runGeneratorExperiments()</a>.</p>
+
+</div>
+</div>
+<a id="afe1b595eefaf3e54f2fb23a27179dd3d" name="afe1b595eefaf3e54f2fb23a27179dd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1b595eefaf3e54f2fb23a27179dd3d">&#9670;&#160;</a></span>countOneBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int countOneBits </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считает количество единичных битов в числе. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>32-битное число </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>int количество единичных битов </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00271">271</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00293">frequencyTest()</a>.</p>
+
+</div>
+</div>
+<a id="a99e540365e6f12b1647db234f0538d16" name="a99e540365e6f12b1647db234f0538d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e540365e6f12b1647db234f0538d16">&#9670;&#160;</a></span>frequencyTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_test_result.html">TestResult</a> frequencyTest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частотный битовый тест. </p>
+<p>Проверяет, примерно ли одинаково количество нулей и единиц в битовом представлении выборки.</p>
+<p>Для хорошего генератора доля единиц должна быть близка к 0.5.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>исходные 32-битные значения генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_test_result.html" title="Структура для хранения результата одного теста.">TestResult</a> результат теста </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00293">293</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00271">countOneBits()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>.</p>
+
+</div>
+</div>
+<a id="a85f8ab3928c62758556bfecfa69d0472" name="a85f8ab3928c62758556bfecfa69d0472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f8ab3928c62758556bfecfa69d0472">&#9670;&#160;</a></span>generateSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Generator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sample.html">Sample</a> generateSample </td>
+          <td>(</td>
+          <td class="paramtype">Generator &amp;</td>          <td class="paramname"><span class="paramname"><em>generator</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Генерирует одну выборку для переданного генератора. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Generator</td><td>тип генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generator</td><td>объект генератора </td></tr>
+    <tr><td class="paramname">sampleSize</td><td>количество элементов в выборке </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_sample.html" title="Структура для хранения одной выборки.">Sample</a> выборка с исходными и нормированными значениями </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00077">77</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00026">Sample::normalizedValues</a>, <a class="el" href="main_8cpp_source.html#l00025">Sample::rawValues</a> и <a class="el" href="main_8cpp_source.html#l00016">TWO32</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00573">runGeneratorExperiments()</a>.</p>
+
+</div>
+</div>
+<a id="aa4fe316e51949c6e48d76abc44033f63" name="aa4fe316e51949c6e48d76abc44033f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fe316e51949c6e48d76abc44033f63">&#9670;&#160;</a></span>inverseNormalCDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double inverseNormalCDF </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Приближенно считает обратную функцию стандартного нормального распределения. </p>
+<p>То есть по вероятности p возвращает такое значение z, что P(Z &lt;= z) = p для стандартной нормальной случайной величины.</p>
+<p>Используется аппроксимация Питера Аклама.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>вероятность из диапазона (0, 1) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double квантиль стандартного нормального распределения </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00187">187</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00251">chiSquareCriticalValue()</a>.</p>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00690">690</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00573">runGeneratorExperiments()</a> и <a class="el" href="main_8cpp_source.html#l00670">writeSpeedResults()</a>.</p>
+
+</div>
+</div>
+<a id="a678b6e52e620fc80db0e3aacf01d082f" name="a678b6e52e620fc80db0e3aacf01d082f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678b6e52e620fc80db0e3aacf01d082f">&#9670;&#160;</a></span>measureCustomGeneratorSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Generator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double measureCustomGeneratorSpeed </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Замеряет время генерации чисел для одного из наших генераторов. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Generator</td><td>тип генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>начальное значение генератора </td></tr>
+    <tr><td class="paramname">count</td><td>количество генерируемых чисел </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double время генерации в микросекундах </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00622">622</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00670">writeSpeedResults()</a>.</p>
+
+</div>
+</div>
+<a id="a56c2b4ea54e7b65dc680387bc09940f0" name="a56c2b4ea54e7b65dc680387bc09940f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c2b4ea54e7b65dc680387bc09940f0">&#9670;&#160;</a></span>measureMt19937Speed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double measureMt19937Speed </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Замеряет время генерации чисел для стандартного генератора std::mt19937. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>начальное значение генератора </td></tr>
+    <tr><td class="paramname">count</td><td>количество генерируемых чисел </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>double время генерации в миллисекундах </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00646">646</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00670">writeSpeedResults()</a>.</p>
+
+</div>
+</div>
+<a id="a12676e607944ca81a655c8ca746eead5" name="a12676e607944ca81a655c8ca746eead5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12676e607944ca81a655c8ca746eead5">&#9670;&#160;</a></span>overlappingPermutationsTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_test_result.html">TestResult</a> overlappingPermutationsTest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overlapping permutations test. </p>
+<p>Берет группы из пяти подряд идущих нормированных чисел и смотрит порядок их расположения.</p>
+<p>Для пяти чисел существует 5! = 120 возможных порядков. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>нормированные значения из диапазона [0, 1) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_test_result.html" title="Структура для хранения результата одного теста.">TestResult</a> результат теста </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00438">438</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00251">chiSquareCriticalValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>.</p>
+
+</div>
+</div>
+<a id="ac0643349b839d198ac76182a2810728a" name="ac0643349b839d198ac76182a2810728a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0643349b839d198ac76182a2810728a">&#9670;&#160;</a></span>poker4Test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_test_result.html">TestResult</a> poker4Test </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Poker 4-bit test. </p>
+<p>Делит битовую последовательность на блоки по 4 бита. Возможных блоков всего 16: от 0000 до 1111.</p>
+<p>У хорошего генератора все 16 вариантов должны встречаться примерно равномерно.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>исходные 32-битные значения генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_test_result.html" title="Структура для хранения результата одного теста.">TestResult</a> результат теста </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00398">398</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00251">chiSquareCriticalValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>.</p>
+
+</div>
+</div>
+<a id="a2223703d95f79762eab2a396afcb127e" name="a2223703d95f79762eab2a396afcb127e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2223703d95f79762eab2a396afcb127e">&#9670;&#160;</a></span>runAllTests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="struct_test_result.html">TestResult</a> &gt; runAllTests </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_sample.html">Sample</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sample</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запускает все тесты для одной выборки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample</td><td>выборка генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::vector&lt;TestResult&gt; результаты всех тестов </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00502">502</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00293">frequencyTest()</a>, <a class="el" href="main_8cpp_source.html#l00026">Sample::normalizedValues</a>, <a class="el" href="main_8cpp_source.html#l00438">overlappingPermutationsTest()</a>, <a class="el" href="main_8cpp_source.html#l00398">poker4Test()</a>, <a class="el" href="main_8cpp_source.html#l00025">Sample::rawValues</a>, <a class="el" href="main_8cpp_source.html#l00322">runsTest()</a> и <a class="el" href="main_8cpp_source.html#l00361">serial2Test()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00573">runGeneratorExperiments()</a>.</p>
+
+</div>
+</div>
+<a id="a29bae0975bee11dd06a844872594f950" name="a29bae0975bee11dd06a844872594f950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29bae0975bee11dd06a844872594f950">&#9670;&#160;</a></span>runGeneratorExperiments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Generator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void runGeneratorExperiments </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;</td>          <td class="paramname"><span class="paramname"><em>summaryFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ofstream &amp;</td>          <td class="paramname"><span class="paramname"><em>testsFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>baseSeed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запускает эксперименты для одного генератора. </p>
+<p>Для генератора создается 20 выборок по 5000 элементов. Для каждой выборки считаются: среднее, стандартное отклонение, коэффициент вариации, Хи-квадрат проверка равномерности, 5 NIST/Diehard-подобных тестов.</p>
+<p>Результаты записываются в CSV-файлы.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Generator</td><td>тип генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">summaryFile</td><td>файл для базовой статистики и Хи-квадрат проверки </td></tr>
+    <tr><td class="paramname">testsFile</td><td>файл для результатов NIST/Diehard-подобных тестов </td></tr>
+    <tr><td class="paramname">baseSeed</td><td>базовое начальное значение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00573">573</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00164">calculateBasicStats()</a>, <a class="el" href="main_8cpp_source.html#l00525">chiSquareUniformTest()</a>, <a class="el" href="main_8cpp_source.html#l00039">BasicStats::coefficientVariation</a>, <a class="el" href="main_8cpp_source.html#l00064">ChiSquareResult::criticalValue</a>, <a class="el" href="main_8cpp_source.html#l00077">generateSample()</a>, <a class="el" href="main_8cpp_source.html#l00037">BasicStats::mean</a>, <a class="el" href="main_8cpp_source.html#l00026">Sample::normalizedValues</a>, <a class="el" href="main_8cpp_source.html#l00065">ChiSquareResult::passed</a>, <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>, <a class="el" href="main_8cpp_source.html#l00063">ChiSquareResult::statistic</a> и <a class="el" href="main_8cpp_source.html#l00038">BasicStats::stddev</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00690">main()</a>.</p>
+
+</div>
+</div>
+<a id="a37b7d6368a60c288a637f7dae55ccb5c" name="a37b7d6368a60c288a637f7dae55ccb5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b7d6368a60c288a637f7dae55ccb5c">&#9670;&#160;</a></span>runsTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_test_result.html">TestResult</a> runsTest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Тест серий битов. </p>
+<p>Проверяет, насколько часто в битовой последовательности происходят переходы между 0 и 1.</p>
+<p>Если переходов слишком мало, значит есть слишком длинные серии одинаковых битов. Если переходов слишком много, значит биты слишком регулярно чередуются.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>исходные 32-битные значения генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_test_result.html" title="Структура для хранения результата одного теста.">TestResult</a> результат теста </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00322">322</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>.</p>
+
+</div>
+</div>
+<a id="ac87654150ff77f4883d6e32d8e263fe3" name="ac87654150ff77f4883d6e32d8e263fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87654150ff77f4883d6e32d8e263fe3">&#9670;&#160;</a></span>serial2Test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_test_result.html">TestResult</a> serial2Test </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serial 2-bit test. </p>
+<p>Проверяет распределение пар битов:</p>
+<p>00, 01, 10, 11</p>
+<p>У хорошего генератора эти пары должны встречаться примерно одинаково часто.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>исходные 32-битные значения генератора </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_test_result.html" title="Структура для хранения результата одного теста.">TestResult</a> результат теста </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00361">361</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00251">chiSquareCriticalValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00502">runAllTests()</a>.</p>
+
+</div>
+</div>
+<a id="a12db4271188f0858affe8dba3ef0bbdf" name="a12db4271188f0858affe8dba3ef0bbdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12db4271188f0858affe8dba3ef0bbdf">&#9670;&#160;</a></span>writeSpeedResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeSpeedResults </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;</td>          <td class="paramname"><span class="paramname"><em>speedFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записывает результаты замера скорости в speed.csv. </p>
+<p>Проверяются размеры от 1000 до 1000000 элементов.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">speedFile</td><td>файл для записи результатов скорости </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00670">670</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="main_8cpp_source.html#l00622">measureCustomGeneratorSpeed()</a> и <a class="el" href="main_8cpp_source.html#l00646">measureMt19937Speed()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00690">main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Переменные</h2>
+<a id="a43867a47ec63b3b2eb1c3645214f0a1c" name="a43867a47ec63b3b2eb1c3645214f0a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43867a47ec63b3b2eb1c3645214f0a1c">&#9670;&#160;</a></span>TWO32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double TWO32 = 4294967296.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00016">16</a></p>
+
+<p class="reference">Используется в <a class="el" href="main_8cpp_source.html#l00077">generateSample()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

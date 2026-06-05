@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Laboratory work 1. Sorting algorithms: Исходный файл generator.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Laboratory work 1. Sorting algorithms
+   </div>
+   <div id="projectbrief">Comparison of sorting algorithms for military staff records</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('generator_8py_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">generator.py</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="generator_8py.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacegenerator.html">    1</a></span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> csv</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> random</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacegenerator.html#a9074d415dd72efebab782659c0a54c70">   15</a></span>FOLDER = Path(<span class="stringliteral">&quot;mil_csv_folder&quot;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacegenerator.html#ae2141f8624946087e1feb6a9e356989b">   20</a></span>DATA_SIZES = [100, 200, 400, 750, 1000, 1500, 2000, 3000, 5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 35000, 40000]</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacegenerator.html#ac5842dc439fef7c8e657322955356b4f">   23</a></span>LAST_NAMES = [</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="stringliteral">&quot;Иванов&quot;</span>, <span class="stringliteral">&quot;Петров&quot;</span>, <span class="stringliteral">&quot;Сидоров&quot;</span>, <span class="stringliteral">&quot;Смирнов&quot;</span>, <span class="stringliteral">&quot;Кузнецов&quot;</span>, <span class="stringliteral">&quot;Попов&quot;</span>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="stringliteral">&quot;Васильев&quot;</span>, <span class="stringliteral">&quot;Соколов&quot;</span>, <span class="stringliteral">&quot;Михайлов&quot;</span>, <span class="stringliteral">&quot;Новиков&quot;</span>, <span class="stringliteral">&quot;Фёдоров&quot;</span>, <span class="stringliteral">&quot;Морозов&quot;</span>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="stringliteral">&quot;Кочергин&quot;</span>, <span class="stringliteral">&quot;Алексеев&quot;</span>, <span class="stringliteral">&quot;Лебедев&quot;</span>, <span class="stringliteral">&quot;Семёнов&quot;</span>, <span class="stringliteral">&quot;Егоров&quot;</span>, <span class="stringliteral">&quot;Павлов&quot;</span>,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="stringliteral">&quot;Козлов&quot;</span>, <span class="stringliteral">&quot;Степанов&quot;</span>, <span class="stringliteral">&quot;Николаев&quot;</span>, <span class="stringliteral">&quot;Орлов&quot;</span>, <span class="stringliteral">&quot;Андреев&quot;</span>, <span class="stringliteral">&quot;Макаров&quot;</span>,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="stringliteral">&quot;Никитин&quot;</span>, <span class="stringliteral">&quot;Захаров&quot;</span>, <span class="stringliteral">&quot;Зайцев&quot;</span>, <span class="stringliteral">&quot;Соловьёв&quot;</span>, <span class="stringliteral">&quot;Борисов&quot;</span>, <span class="stringliteral">&quot;Яковлев&quot;</span>,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>]</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacegenerator.html#ac177e994f541352552f5e060174d87fd">   32</a></span>FIRST_NAMES = [</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="stringliteral">&quot;Александр&quot;</span>, <span class="stringliteral">&quot;Дмитрий&quot;</span>, <span class="stringliteral">&quot;Максим&quot;</span>, <span class="stringliteral">&quot;Сергей&quot;</span>, <span class="stringliteral">&quot;Андрей&quot;</span>, <span class="stringliteral">&quot;Алексей&quot;</span>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="stringliteral">&quot;Артём&quot;</span>, <span class="stringliteral">&quot;Илья&quot;</span>, <span class="stringliteral">&quot;Кирилл&quot;</span>, <span class="stringliteral">&quot;Михаил&quot;</span>, <span class="stringliteral">&quot;Никита&quot;</span>, <span class="stringliteral">&quot;Матвей&quot;</span>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="stringliteral">&quot;Роман&quot;</span>, <span class="stringliteral">&quot;Егор&quot;</span>, <span class="stringliteral">&quot;Иван&quot;</span>, <span class="stringliteral">&quot;Денис&quot;</span>, <span class="stringliteral">&quot;Евгений&quot;</span>, <span class="stringliteral">&quot;Степан&quot;</span>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="stringliteral">&quot;Павел&quot;</span>, <span class="stringliteral">&quot;Константин&quot;</span>, <span class="stringliteral">&quot;Олег&quot;</span>, <span class="stringliteral">&quot;Виктор&quot;</span>, <span class="stringliteral">&quot;Юрий&quot;</span>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>]</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacegenerator.html#ada22797c66521c7363e4503d8cd42f5f">   40</a></span>PATRONYMICS = [</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="stringliteral">&quot;Александрович&quot;</span>, <span class="stringliteral">&quot;Дмитриевич&quot;</span>, <span class="stringliteral">&quot;Максимович&quot;</span>, <span class="stringliteral">&quot;Сергеевич&quot;</span>,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="stringliteral">&quot;Андреевич&quot;</span>, <span class="stringliteral">&quot;Алексеевич&quot;</span>, <span class="stringliteral">&quot;Ильич&quot;</span>, <span class="stringliteral">&quot;Кириллович&quot;</span>, <span class="stringliteral">&quot;Михайлович&quot;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="stringliteral">&quot;Никитич&quot;</span>, <span class="stringliteral">&quot;Романович&quot;</span>, <span class="stringliteral">&quot;Иванович&quot;</span>, <span class="stringliteral">&quot;Павлович&quot;</span>, <span class="stringliteral">&quot;Олегович&quot;</span>,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="stringliteral">&quot;Викторович&quot;</span>, <span class="stringliteral">&quot;Юрьевич&quot;</span>,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>]</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespacegenerator.html#a8c22956829e84b17391e32478ec9767b">   52</a></span>RANKS = [</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="stringliteral">&quot;рядовой&quot;</span>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="stringliteral">&quot;сержант&quot;</span>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="stringliteral">&quot;прапорщик&quot;</span>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="stringliteral">&quot;лейтенант&quot;</span>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="stringliteral">&quot;капитан&quot;</span>,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="stringliteral">&quot;майор&quot;</span>,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="stringliteral">&quot;полковник&quot;</span>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>]</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00067" data-start="" data-end="">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="namespacegenerator.html#ab3701783760ef801eb4f201a9a8d1b1f">   67</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacegenerator.html#ab3701783760ef801eb4f201a9a8d1b1f">make_soldier_record</a>():</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> [</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        f<span class="stringliteral">&quot;{random.choice(LAST_NAMES)} {random.choice(FIRST_NAMES)} {random.choice(PATRONYMICS)}&quot;</span>, <span class="comment">#ФИО</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        random.choice(RANKS), <span class="comment">#Звание</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        random.randint(1, 12), <span class="comment">#номер роты</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        random.randint(18, 60), <span class="comment">#Возраст</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    ]</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="foldopen" id="foldopen00082" data-start="" data-end="">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="namespacegenerator.html#a636d79ba83f79ac0ee70f5d31b0241c1">   82</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacegenerator.html#a636d79ba83f79ac0ee70f5d31b0241c1">create_csv_file</a>(size):</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    FOLDER.mkdir(exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    file_name = f<span class="stringliteral">&quot;soldiers_{size}.csv&quot;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    file_path = FOLDER / file_name</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">with</span> file_path.open(<span class="stringliteral">&quot;w&quot;</span>, encoding=<span class="stringliteral">&quot;utf-8&quot;</span>, newline=<span class="stringliteral">&quot;&quot;</span>) <span class="keyword">as</span> file:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        writer = csv.writer(file)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        writer.writerow([<span class="stringliteral">&quot;fullName&quot;</span>, <span class="stringliteral">&quot;rank&quot;</span>, <span class="stringliteral">&quot;companyNumber&quot;</span>, <span class="stringliteral">&quot;age&quot;</span>])</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">for</span> _ <span class="keywordflow">in</span> range(size):</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            writer.writerow(<a class="code hl_function" href="namespacegenerator.html#ab3701783760ef801eb4f201a9a8d1b1f">make_soldier_record</a>())</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> file_path</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00101" data-start="" data-end="">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespacegenerator.html#a51af30a60f9f02777c6396b8247e356f">  101</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacegenerator.html#a51af30a60f9f02777c6396b8247e356f">main</a>():</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    random.seed(42)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    print(<span class="stringliteral">&quot;Генерация началась&quot;</span>)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> size <span class="keywordflow">in</span> DATA_SIZES:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        file_path = <a class="code hl_function" href="namespacegenerator.html#a636d79ba83f79ac0ee70f5d31b0241c1">create_csv_file</a>(size)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        print(f<span class="stringliteral">&quot;Создан файл: {file_path}&quot;</span>)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    print(<span class="stringliteral">&quot;Генерация закончена&quot;</span>)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="namespacegenerator.html#a51af30a60f9f02777c6396b8247e356f">main</a>()</div>
+<div class="ttc" id="anamespacegenerator_html_a51af30a60f9f02777c6396b8247e356f"><div class="ttname"><a href="namespacegenerator.html#a51af30a60f9f02777c6396b8247e356f">generator.main</a></div><div class="ttdeci">main()</div><div class="ttdoc">Основная функция программы.</div><div class="ttdef"><b>Определения</b> <a href="#l00101">generator.py:101</a></div></div>
+<div class="ttc" id="anamespacegenerator_html_a636d79ba83f79ac0ee70f5d31b0241c1"><div class="ttname"><a href="namespacegenerator.html#a636d79ba83f79ac0ee70f5d31b0241c1">generator.create_csv_file</a></div><div class="ttdeci">create_csv_file(size)</div><div class="ttdoc">Создает один CSV-файл заданного размера.</div><div class="ttdef"><b>Определения</b> <a href="#l00082">generator.py:82</a></div></div>
+<div class="ttc" id="anamespacegenerator_html_ab3701783760ef801eb4f201a9a8d1b1f"><div class="ttname"><a href="namespacegenerator.html#ab3701783760ef801eb4f201a9a8d1b1f">generator.make_soldier_record</a></div><div class="ttdeci">make_soldier_record()</div><div class="ttdoc">Создает одну запись о служащем.</div><div class="ttdef"><b>Определения</b> <a href="#l00067">generator.py:67</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="generator_8py.html">generator.py</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

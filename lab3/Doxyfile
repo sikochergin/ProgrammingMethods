@@ -1,0 +1,198 @@
+# ============================================================
+# Doxyfile для ЛР3: генераторы псевдослучайных чисел
+# ============================================================
+
+# Название проекта
+PROJECT_NAME           = "ЛР3 - Генераторы псевдослучайных чисел"
+
+# Краткое описание проекта
+PROJECT_BRIEF          = "Исследование и модификация генераторов псевдослучайных чисел"
+
+# Версия проекта
+PROJECT_NUMBER         = "1.0"
+
+# Кодировка входных файлов
+INPUT_ENCODING         = UTF-8
+
+# Язык документации
+OUTPUT_LANGUAGE        = Russian
+
+# Папка, куда будет сгенерирована документация
+OUTPUT_DIRECTORY       = documentation
+
+# Генерировать HTML-документацию
+GENERATE_HTML          = YES
+
+# Генерировать LaTeX-документацию
+GENERATE_LATEX         = NO
+
+# Главная страница HTML-документации
+HTML_OUTPUT            = html
+
+# Показывать исходный код в документации
+SOURCE_BROWSER         = YES
+
+# Добавлять ссылки на исходный код
+INLINE_SOURCES         = NO
+
+# Показывать номера строк исходного кода
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# Извлекать документацию даже из элементов без Doxygen-комментариев
+EXTRACT_ALL            = YES
+
+# Извлекать private-поля и методы
+EXTRACT_PRIVATE        = YES
+
+# Извлекать static-функции и переменные
+EXTRACT_STATIC         = YES
+
+# Извлекать локальные классы
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Показывать все файлы
+SHOW_FILES             = YES
+
+# Показывать include-зависимости
+SHOW_INCLUDE_FILES     = YES
+
+# Показывать группы
+SHOW_GROUPED_MEMB_INC  = YES
+
+# Рекурсивно обходить папки проекта
+RECURSIVE              = YES
+
+# Какие файлы анализировать
+INPUT                  = .
+
+# Какие расширения файлов учитывать
+FILE_PATTERNS          = *.cpp \
+                         *.h \
+                         *.hpp \
+                         *.cxx \
+                         *.cc
+
+# Какие папки не включать в документацию
+EXCLUDE                = documentation \
+                         .vs \
+                         x64 \
+                         Debug \
+                         Release \
+                         cmake-build-debug \
+                         cmake-build-release \
+                         __pycache__
+
+# Исключать служебные файлы
+EXCLUDE_PATTERNS       = */documentation/* \
+                         */.vs/* \
+                         */x64/* \
+                         */Debug/* \
+                         */Release/* \
+                         */cmake-build-debug/* \
+                         */cmake-build-release/* \
+                         *.obj \
+                         *.exe \
+                         *.pdb \
+                         *.ilk
+
+# Использовать расширение .md как Markdown
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Если README.md нет, Doxygen просто проигнорирует эту настройку
+
+# Сортировать элементы по имени
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = YES
+
+# Показывать краткое описание функций
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+
+# Поддержка Javadoc-style комментариев
+JAVADOC_AUTOBRIEF      = YES
+
+# Поддержка комментариев вида /// 
+QT_AUTOBRIEF           = YES
+
+# Оптимизация документации под C++
+OPTIMIZE_OUTPUT_FOR_C  = NO
+
+# Включить поддержку C++
+EXTENSION_MAPPING      =
+
+# Отображать предупреждения
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+
+# Файл с предупреждениями
+WARN_LOGFILE           = documentation/doxygen_warnings.txt
+
+# Генерация графов зависимостей.
+# Если установлен Graphviz, можно поставить HAVE_DOT = YES.
+# Если Graphviz не установлен, оставь NO.
+HAVE_DOT               = NO
+
+# Диаграммы классов без Graphviz
+CLASS_DIAGRAMS         = YES
+
+# Если HAVE_DOT = YES, можно включить эти настройки:
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+
+# Максимальная глубина графов
+MAX_DOT_GRAPH_DEPTH    = 3
+
+# Не искать внешние теги
+GENERATE_TAGFILE       =
+
+# Не создавать XML
+GENERATE_XML           = NO
+
+# Не создавать RTF
+GENERATE_RTF           = NO
+# Не создавать man-страницы
+GENERATE_MAN           = NO
+
+# Не создавать DocBook
+GENERATE_DOCBOOK       = NO
+
+# Не создавать SQLite
+GENERATE_SQLITE3       = NO
+
+# Отображение полного пути к файлам
+FULL_PATH_NAMES        = NO
+
+# Обрезать длинные шаблонные типы
+TEMPLATE_RELATIONS     = YES
+
+# Включить препроцессор
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+EXPAND_ONLY_PREDEF     = NO
+
+# Скрывать недокументированные элементы не нужно,
+# потому что для лабораторной лучше показать весь код
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+HIDE_FRIEND_COMPOUNDS  = NO
+HIDE_IN_BODY_DOCS      = NO
+
+# Индекс поиска в HTML
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+# Кодировка HTML
+HTML_FILE_EXTENSION    = .html
+
+# Формат вывода
+HTML_COLORSTYLE        = LIGHT
+
+# ============================================================
+# Конец Doxyfile
+# ============================================================

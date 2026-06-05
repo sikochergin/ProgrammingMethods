@@ -49,7 +49,7 @@ vector<Soldier> readSoldiersFromCSV(const string& fileName) {
 
     while (getline(file, line)) {
         stringstream ss(line); //Создаем stringstream
-
+        
         string fullName;
         string rank;
         string companyNumberString;

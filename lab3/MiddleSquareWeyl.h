@@ -36,7 +36,7 @@ private:
      * Константа нечетная, что важно для хорошего перебора значений
      * при работе по модулю 2^64.
      */
-    static constexpr uint64_t WEYL_CONSTANT = 0xB5AD4ECEDA1CE2A9ULL;
+    static const uint64_t WEYL_CONSTANT = 0xB5AD4ECEDA1CE2A9ULL;
 
 public:
     /**

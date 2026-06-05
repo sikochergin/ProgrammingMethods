@@ -1,0 +1,64 @@
+# Название проекта
+PROJECT_NAME = "Laboratory work 1. Sorting algorithms"
+
+# Краткое описание проекта
+PROJECT_BRIEF = "Comparison of sorting algorithms for military staff records"
+
+# Кодировка исходников
+DOXYFILE_ENCODING = UTF-8
+INPUT_ENCODING = UTF-8
+
+# Язык документации
+OUTPUT_LANGUAGE = Russian
+
+# Куда сохранять документацию
+OUTPUT_DIRECTORY = documentation
+
+# Какие файлы анализировать
+INPUT = .
+
+# Искать ли файлы во вложенных папках
+RECURSIVE = NO
+
+# Какие расширения файлов брать
+FILE_PATTERNS = *.h *.cpp *.py
+
+# Что исключить из обработки
+EXCLUDE = mil_csv_folder documentation
+
+# Генерировать HTML
+GENERATE_HTML = YES
+
+# Папка для HTML внутри OUTPUT_DIRECTORY
+HTML_OUTPUT = html
+
+# Не генерировать LaTeX
+GENERATE_LATEX = NO
+
+# Извлекать документацию даже для не полностью описанных элементов
+EXTRACT_ALL = YES
+
+# Показывать private-поля класса
+EXTRACT_PRIVATE = YES
+
+# Показывать static-элементы, если есть
+EXTRACT_STATIC = YES
+
+# Показывать исходный код в документации
+SOURCE_BROWSER = YES
+
+# Показывать include-зависимости
+SHOW_INCLUDE_FILES = YES
+
+# Включить дерево навигации слева
+GENERATE_TREEVIEW = YES
+
+# Включить поиск по документации
+SEARCHENGINE = YES
+
+# Предупреждать, если что-то не документировано
+WARNINGS = YES
+WARN_IF_UNDOCUMENTED = YES
+
+# Не требовать Graphviz/DOT, чтобы не было лишних проблем
+HAVE_DOT = NO

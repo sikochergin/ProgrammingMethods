@@ -21,11 +21,11 @@ private:
      * @brief Узел бинарного дерева поиска.
      */
     struct Node {
-        string key;              // Ключ узла: ФИО солдата
-        vector<Soldier> values;  // Все солдаты с таким ФИО
+        string key; // Ключ узла: ФИО солдата
+        vector<Soldier> values; // Все солдаты с таким ФИО
 
-        Node* left;              // Левый потомок
-        Node* right;             // Правый потомок
+        Node* left; // Левый потомок
+        Node* right; // Правый потомок
 
         /**
          * @brief Конструктор узла.

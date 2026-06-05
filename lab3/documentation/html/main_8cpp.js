@@ -1,0 +1,28 @@
+var main_8cpp =
+[
+    [ "BasicStats", "struct_basic_stats.html", "struct_basic_stats" ],
+    [ "ChiSquareResult", "struct_chi_square_result.html", "struct_chi_square_result" ],
+    [ "Sample", "struct_sample.html", "struct_sample" ],
+    [ "TestResult", "struct_test_result.html", "struct_test_result" ],
+    [ "calculateBasicStats", "main_8cpp.html#a4481a9847461ea931943acbf3fc3b211", null ],
+    [ "calculateCoefficientVariation", "main_8cpp.html#aabc8f4104a468c60fc1003710d2f0a02", null ],
+    [ "calculateMean", "main_8cpp.html#a434f7667defb7b5df70485fc98cf7444", null ],
+    [ "calculateStddev", "main_8cpp.html#ab45587afbc0cfed02de1567688592e31", null ],
+    [ "chiSquareCriticalValue", "main_8cpp.html#a2c295fb0d87bbb349dad372f8aaa6f7b", null ],
+    [ "chiSquareUniformTest", "main_8cpp.html#af955a98786dc7ef5849c8310b9ce67c6", null ],
+    [ "countOneBits", "main_8cpp.html#afe1b595eefaf3e54f2fb23a27179dd3d", null ],
+    [ "frequencyTest", "main_8cpp.html#a99e540365e6f12b1647db234f0538d16", null ],
+    [ "generateSample", "main_8cpp.html#a85f8ab3928c62758556bfecfa69d0472", null ],
+    [ "inverseNormalCDF", "main_8cpp.html#aa4fe316e51949c6e48d76abc44033f63", null ],
+    [ "main", "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ],
+    [ "measureCustomGeneratorSpeed", "main_8cpp.html#a678b6e52e620fc80db0e3aacf01d082f", null ],
+    [ "measureMt19937Speed", "main_8cpp.html#a56c2b4ea54e7b65dc680387bc09940f0", null ],
+    [ "overlappingPermutationsTest", "main_8cpp.html#a12676e607944ca81a655c8ca746eead5", null ],
+    [ "poker4Test", "main_8cpp.html#ac0643349b839d198ac76182a2810728a", null ],
+    [ "runAllTests", "main_8cpp.html#a2223703d95f79762eab2a396afcb127e", null ],
+    [ "runGeneratorExperiments", "main_8cpp.html#a29bae0975bee11dd06a844872594f950", null ],
+    [ "runsTest", "main_8cpp.html#a37b7d6368a60c288a637f7dae55ccb5c", null ],
+    [ "serial2Test", "main_8cpp.html#ac87654150ff77f4883d6e32d8e263fe3", null ],
+    [ "writeSpeedResults", "main_8cpp.html#a12db4271188f0858affe8dba3ef0bbdf", null ],
+    [ "TWO32", "main_8cpp.html#a43867a47ec63b3b2eb1c3645214f0a1c", null ]
+];

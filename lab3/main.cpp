@@ -523,7 +523,7 @@ std::vector<TestResult> runAllTests(const Sample& sample) {
  * @return ChiSquareResult результат проверки
  */
 ChiSquareResult chiSquareUniformTest(const std::vector<double>& values) {
-    int binCount = static_cast<int>(std::log2(values.size()));
+    int binCount = static_cast<int>(1.0 + std::log2(values.size()));
     if (binCount < 5){
         binCount = 5;
     }
@@ -574,7 +574,7 @@ void runGeneratorExperiments(std::ofstream& summaryFile,
                              std::ofstream& testsFile,
                              uint32_t baseSeed) {
     const int sampleCount = 20; //сколько выблрок генерируем
-    const int sampleSize = 5000; //сколько элементов в каждой выборке
+    const int sampleSize = 3001; //сколько элементов в каждой выборке
 
     for (int sampleIndex = 1; sampleIndex <= sampleCount; sampleIndex++) {
         uint32_t seed = baseSeed + static_cast<uint32_t>(sampleIndex) * 1000u;
@@ -621,11 +621,12 @@ void runGeneratorExperiments(std::ofstream& summaryFile,
 template <typename Generator>
 double measureCustomGeneratorSpeed(uint32_t seed, int count) {
     Generator generator(seed);
+    uint32_t sink = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int i = 0; i < count; i++) {
-        generator.next();
+        sink ^= generator.next();
     }
 
     auto end = std::chrono::high_resolution_clock::now();
@@ -644,11 +645,12 @@ double measureCustomGeneratorSpeed(uint32_t seed, int count) {
  */
 double measureMt19937Speed(uint32_t seed, int count) {
     std::mt19937 generator(seed);
+    uint32_t sink = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int i = 0; i < count; i++) {
-        generator();
+        sink ^= generator();
     }
 
     auto end = std::chrono::high_resolution_clock::now();

@@ -79,10 +79,10 @@ def make_soldier_record():
 #
 #  @param records_count Количество записей, которое нужно создать.
 #  @return Путь к созданному CSV-файлу.
-def create_csv_file(size):
+def create_csv_file(size, run):
     FOLDER.mkdir(exist_ok=True)
 
-    file_name = f"soldiers_{size}.csv"
+    file_name = f"soldiers_{size}_{run}.csv"
     file_path = FOLDER / file_name
 
     with file_path.open("w", encoding="utf-8", newline="") as file:
@@ -104,8 +104,9 @@ def main():
     print("Генерация началась")
 
     for size in DATA_SIZES:
-        file_path = create_csv_file(size)
-        print(f"Создан файл: {file_path}")
+        for i in range(5):
+            file_path = create_csv_file(size, i)
+            print(f"Создан файл: {file_path}")
 
     print("Генерация закончена")
 

@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ЛР3 - Генераторы псевдослучайных чисел: Класс LCGMix</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ЛР3 - Генераторы псевдослучайных чисел<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Исследование и модификация генераторов псевдослучайных чисел</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_l_c_g_mix.html','','class_l_c_g_mix-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс LCGMix</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Модифицированный линейный конгруэнтный генератор.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ad4edd85d924c8fe8e15ce1086b91276b" id="r_ad4edd85d924c8fe8e15ce1086b91276b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad4edd85d924c8fe8e15ce1086b91276b">LCGMix</a> (uint32_t seed)</td></tr>
+<tr class="memdesc:ad4edd85d924c8fe8e15ce1086b91276b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает генератор с заданным начальным значением.  <br /></td></tr>
+<tr class="memitem:a3b121d64aa0645543faa4739acda830c" id="r_a3b121d64aa0645543faa4739acda830c"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a3b121d64aa0645543faa4739acda830c">name</a> () const</td></tr>
+<tr class="memdesc:a3b121d64aa0645543faa4739acda830c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает название генератора.  <br /></td></tr>
+<tr class="memitem:ac5bea9e42fc59a1647e0801ad11e1477" id="r_ac5bea9e42fc59a1647e0801ad11e1477"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#ac5bea9e42fc59a1647e0801ad11e1477">next</a> ()</td></tr>
+<tr class="memdesc:ac5bea9e42fc59a1647e0801ad11e1477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерирует следующее псевдослучайное число.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:aa4f0337d73fbda4f86a14447d612080f" id="r_aa4f0337d73fbda4f86a14447d612080f"><td class="memItemLeft">static uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#aa4f0337d73fbda4f86a14447d612080f">mix</a> (uint32_t x)</td></tr>
+<tr class="memdesc:aa4f0337d73fbda4f86a14447d612080f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемешивает биты числа.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ade19e24328d28bf4d7ad1a448a70da52" id="r_ade19e24328d28bf4d7ad1a448a70da52"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#ade19e24328d28bf4d7ad1a448a70da52">state</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a8359e798193627625576c5fd2a5e76a9" id="r_a8359e798193627625576c5fd2a5e76a9"><td class="memItemLeft">static const uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a8359e798193627625576c5fd2a5e76a9">A</a> = 1664525u</td></tr>
+<tr class="memdesc:a8359e798193627625576c5fd2a5e76a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Множитель LCG.  <br /></td></tr>
+<tr class="memitem:ae6d25c8b92ed8bea9fb416373b846c1c" id="r_ae6d25c8b92ed8bea9fb416373b846c1c"><td class="memItemLeft">static const uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#ae6d25c8b92ed8bea9fb416373b846c1c">C</a> = 1013904223u</td></tr>
+<tr class="memdesc:ae6d25c8b92ed8bea9fb416373b846c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приращение LCG.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Модифицированный линейный конгруэнтный генератор. </p>
+<p>Базовая формула линейного конгруэнтного метода: state = (A * state + C) mod M</p>
+<p>В данной реализации используется тип uint32_t, поэтому при переполнении лишние старшие биты автоматически отбрасываются, также нужен ровно 32-битный беззнаковый тип.</p>
+<p>Это то же, что и работа по модулю: M = 2^32</p>
+<p>Модификация заключается в том, что генератор возвращает не само состояние, а его дополнительно перемешанную версию. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00020">20</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ad4edd85d924c8fe8e15ce1086b91276b" name="ad4edd85d924c8fe8e15ce1086b91276b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4edd85d924c8fe8e15ce1086b91276b">&#9670;&#160;</a></span>LCGMix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LCGMix::LCGMix </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>seed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создает генератор с заданным начальным значением. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>начальное значение генератора. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00056">56</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_l_c_g_mix_8h_source.html#l00022">state</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aa4f0337d73fbda4f86a14447d612080f" name="aa4f0337d73fbda4f86a14447d612080f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f0337d73fbda4f86a14447d612080f">&#9670;&#160;</a></span>mix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t LCGMix::mix </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перемешивает биты числа. </p>
+<p>Эта функция нужна для того, чтобы уменьшить заметные закономерности, которые могут быть у обычного LCG. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00040">40</a></p>
+
+<p class="reference">Используется в <a class="el" href="_l_c_g_mix_8h_source.html#l00074">next()</a>.</p>
+
+</div>
+</div>
+<a id="a3b121d64aa0645543faa4739acda830c" name="a3b121d64aa0645543faa4739acda830c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b121d64aa0645543faa4739acda830c">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string LCGMix::name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает название генератора. </p>
+<p>Название будет использоваться при записи результатов в CSV. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00084">84</a></p>
+
+</div>
+</div>
+<a id="ac5bea9e42fc59a1647e0801ad11e1477" name="ac5bea9e42fc59a1647e0801ad11e1477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5bea9e42fc59a1647e0801ad11e1477">&#9670;&#160;</a></span>next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t LCGMix::next </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Генерирует следующее псевдослучайное число. </p>
+<p>Сначала обновляется внутреннее состояние по формуле LCG: state = A * state + C</p>
+<p>Из-за типа uint32_t переполнение работает как взятие по модулю 2^32. Затем состояние дополнительно перемешивается функцией <a class="el" href="#aa4f0337d73fbda4f86a14447d612080f" title="Перемешивает биты числа.">mix()</a>.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>uint32_t следующее псевдослучайное число. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00074">74</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_l_c_g_mix_8h_source.html#l00027">A</a>, <a class="el" href="_l_c_g_mix_8h_source.html#l00032">C</a>, <a class="el" href="_l_c_g_mix_8h_source.html#l00040">mix()</a> и <a class="el" href="_l_c_g_mix_8h_source.html#l00022">state</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a8359e798193627625576c5fd2a5e76a9" name="a8359e798193627625576c5fd2a5e76a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8359e798193627625576c5fd2a5e76a9">&#9670;&#160;</a></span>A</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t LCGMix::A = 1664525u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Множитель LCG. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00027">27</a></p>
+
+<p class="reference">Используется в <a class="el" href="_l_c_g_mix_8h_source.html#l00074">next()</a>.</p>
+
+</div>
+</div>
+<a id="ae6d25c8b92ed8bea9fb416373b846c1c" name="ae6d25c8b92ed8bea9fb416373b846c1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6d25c8b92ed8bea9fb416373b846c1c">&#9670;&#160;</a></span>C</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t LCGMix::C = 1013904223u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приращение LCG. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00032">32</a></p>
+
+<p class="reference">Используется в <a class="el" href="_l_c_g_mix_8h_source.html#l00074">next()</a>.</p>
+
+</div>
+</div>
+<a id="ade19e24328d28bf4d7ad1a448a70da52" name="ade19e24328d28bf4d7ad1a448a70da52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade19e24328d28bf4d7ad1a448a70da52">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t LCGMix::state</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a> строка <a class="el" href="_l_c_g_mix_8h_source.html#l00022">22</a></p>
+
+<p class="reference">Используется в <a class="el" href="_l_c_g_mix_8h_source.html#l00056">LCGMix()</a> и <a class="el" href="_l_c_g_mix_8h_source.html#l00074">next()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="_l_c_g_mix_8h_source.html">LCGMix.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_l_c_g_mix.html">LCGMix</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
